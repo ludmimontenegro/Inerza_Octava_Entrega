@@ -1,0 +1,86 @@
+// ==========================================================================
+// Footer
+// ==========================================================================
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.pie {
+  background-color: $color-primario;
+  color: $color-texto-claro;
+  padding: 32px 0 20px;
+
+  @include respond(desktop) {
+    padding: 56px 0 28px;
+  }
+
+  h3 {
+    color: $color-secundario;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 14px;
+  }
+
+  ul li {
+    margin-bottom: 10px;
+  }
+
+  ul a:hover {
+    text-decoration: underline;
+  }
+}
+
+// Se mantiene con CSS Grid + grid-template-areas (requisito de la 4ta
+// entrega); no se migra a flex porque es la sección "compleja" evaluada.
+.pie__grid {
+  display: grid;
+  grid-template-areas:
+    "marca"
+    "enlaces"
+    "contacto";
+  gap: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(244, 239, 230, 0.2);
+
+  > div:nth-child(1) { grid-area: marca; }
+  > div:nth-child(2) { grid-area: enlaces; }
+  > div:nth-child(3) { grid-area: contacto; }
+
+  // Tablet: 2 columnas — marca arriba ocupando todo, enlaces y contacto lado a lado
+  @include respond(tablet) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "marca marca"
+      "enlaces contacto";
+  }
+
+  // Desktop: 3 columnas en una sola fila
+  @include respond(desktop) {
+    grid-template-columns: 1.3fr 1fr 1fr;
+    grid-template-areas:
+      "marca enlaces contacto";
+  }
+}
+
+.pie__marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+
+  img {
+    height: 32px;
+  }
+}
+
+.pie__lema {
+  color: rgba(244, 239, 230, 0.7);
+  max-width: 32ch;
+}
+
+.pie__copy {
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(244, 239, 230, 0.55);
+  margin-top: 22px;
+}

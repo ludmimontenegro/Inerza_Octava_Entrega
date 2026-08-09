@@ -1,0 +1,58 @@
+// ==========================================================================
+// Nav — navbar de Bootstrap, estilado con la identidad de INERZA
+// ==========================================================================
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.navbar-inerza {
+  padding: 10px 0;
+  background-color: transparent;
+
+  .navbar-brand img {
+    height: 60px;
+
+    @include respond(desktop) {
+      height: 70px;
+    }
+  }
+
+  .nav-link {
+    color: $color-texto-claro;
+    font-family: $fuente-base;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 0;
+
+    &:hover,
+    &:focus {
+      color: $color-secundario;
+    }
+
+    &.active {
+      color: $color-secundario;
+    }
+  }
+
+  // Ícono de la hamburguesa en color crema, para que se vea sobre el azul
+  .navbar-toggler {
+    border-color: rgba(244, 239, 230, 0.4);
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28244, 239, 230, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  // En mobile, el menú desplegado hereda el azul de marca
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+      background-color: $color-primario;
+      margin-top: 12px;
+      padding: 16px 4px;
+      border-radius: $radio;
+    }
+
+    .nav-link {
+      padding: 10px 4px;
+    }
+  }
+}

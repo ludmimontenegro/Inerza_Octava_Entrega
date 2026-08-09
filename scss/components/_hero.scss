@@ -1,0 +1,46 @@
+// ==========================================================================
+// Hero y Bienvenida
+// ==========================================================================
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.hero {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  text-align: center;
+
+  @include respond(desktop) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  figure {
+    margin: 10px auto 0;
+    max-width: 850px;
+  }
+
+  figcaption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: $color-texto-tenue;
+    margin-top: 10px;
+  }
+
+  &__botones {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 26px;
+  }
+}
+
+.bienvenida {
+  background-color: #ffffff;
+  padding: 16px 0;
+  text-align: center;
+
+  @include respond(desktop) {
+    padding: 40px 0;
+  }
+}

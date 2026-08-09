@@ -1,0 +1,38 @@
+// ==========================================================================
+// INERZA — main.scss
+// Único punto de entrada de la hoja de estilos. Solo importa partials,
+// no define reglas propias.
+// ==========================================================================
+
+// Utilities
+@use 'utilities/variables' as *;
+@use 'utilities/mixins' as *;
+
+// Base
+@use 'base/base';
+@use 'base/tipografia';
+
+// Layout
+@use 'layout/header';
+@use 'layout/nav';
+@use 'layout/footer';
+
+// Components
+@use 'components/hero';
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/gallery';
+@use 'components/carousel';
+@use 'components/modal';
+@use 'components/franja';
+@use 'components/faq';
+@use 'components/servicios';
+@use 'components/contacto';
+@use 'components/sobre-mi';
+
+// NOTA: la fuente Manrope de Google Fonts ya NO se importa acá con @import.
+// Sass exige que todas las reglas @use vayan antes que cualquier otra regla,
+// así que un @import de CSS quedaría atrapado en medio del archivo compilado
+// y el navegador lo ignoraría (un @import de CSS debe ir al principio del
+// .css final). La solución correcta es cargar la fuente con un <link> en el
+// <head> de cada HTML, junto al link de Bootstrap. Ver head-fuente.txt.

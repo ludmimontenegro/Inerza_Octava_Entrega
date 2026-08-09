@@ -1,0 +1,26 @@
+// ==========================================================================
+// Contacto
+// ==========================================================================
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.contacto-lista {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+
+  @include respond(desktop) {
+    gap: 24px;
+    margin-top: 32px;
+  }
+}
+
+.contacto-item {
+  @include superficie-tarjeta;
+  padding: 24px;
+
+  a {
+    color: $color-secundario;
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,38 @@
+// ==========================================================================
+// Sobre mí
+// ==========================================================================
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.sobre-mi {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px 0;
+  background-color: $color-acento;
+  border-left: 6px solid $color-secundario;
+
+  @include respond(desktop) {
+    padding: 48px 0;
+  }
+
+  .tarjeta__cuerpo {
+    max-width: 65ch;
+    margin: 0 auto;
+    padding: 0 8px;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  &__lema {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: $color-primario;
+    text-align: center;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(28, 52, 84, 0.15);
+  }
+}

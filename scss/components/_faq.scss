@@ -1,0 +1,42 @@
+// ==========================================================================
+// FAQ — bloques temáticos
+// ==========================================================================
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.faq-bloque {
+  margin-bottom: 48px;
+
+  &__titulo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+
+    .icono-franja {
+      margin: 0;
+      width: 40px;
+    }
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  details {
+    @include superficie-tarjeta;
+    padding: 18px 24px;
+    margin-bottom: 14px;
+  }
+
+  summary {
+    font-weight: 600;
+    color: $color-primario;
+    cursor: pointer;
+  }
+
+  details p {
+    margin-top: 12px;
+    color: $color-texto-secundario;
+  }
+}

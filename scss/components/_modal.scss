@@ -1,0 +1,32 @@
+// ==========================================================================
+// Modal — componente de Bootstrap, estilado con la identidad de INERZA
+// ==========================================================================
+@use '../utilities/variables' as *;
+
+.modal-inerza {
+  .modal-content {
+    border-radius: $radio;
+    border: none;
+  }
+
+  .modal-header {
+    border-bottom: 1px solid rgba(28, 52, 84, 0.1);
+  }
+
+  .modal-title {
+    color: $color-primario;
+    margin: 0;
+  }
+
+  .modal-imagen {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: $radio;
+    margin-bottom: 16px;
+  }
+
+  .modal-footer {
+    border-top: none;
+  }
+}

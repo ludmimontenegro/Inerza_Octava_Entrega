@@ -1,0 +1,25 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+@use 'variables' as *;
+
+// Uso: @include respond(desktop) { ... }
+@mixin respond($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (min-width: 480px) { @content; }
+  }
+  @if $breakpoint == tablet {
+    @media (min-width: 640px) { @content; }
+  }
+  @if $breakpoint == desktop {
+    @media (min-width: 1024px) { @content; }
+  }
+}
+
+// Tarjeta blanca con radio y sombra de marca (se reutiliza en tarjetas,
+// galería, contacto, faq, etc.)
+@mixin superficie-tarjeta {
+  background-color: #ffffff;
+  border-radius: $radio;
+  box-shadow: $sombra;
+}

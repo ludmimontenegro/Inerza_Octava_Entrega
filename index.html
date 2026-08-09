@@ -6,10 +6,12 @@
   <title>INERZA | Inicio</title>
   <meta name="description" content="INERZA Estudio: tatuajes temporales, imanes fotográficos y vinos personalizados, hechos a medida desde Rosario para todo el país.">
 
-  <!-- Bootstrap CSS (CDN) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles/styles.css">
+<link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 
@@ -44,13 +46,48 @@
     <section class="hero envolvente">
       <h1 class="titulo-h1">El impulso de crear.</h1>
       <p class="subtitulo">Creo que el diseño va mucho más allá de lo visual: es una forma de contar historias, transmitir emociones y darle identidad a las ideas. Por eso acompaño cada proyecto desde el concepto hasta los últimos detalles.</p>
-
-      <figure>
-        <img src="assets/img/banner-inerza.png" alt="Banner de INERZA Estudio, con ilustración de una mujer creativa y colorida">
-       
-      </figure>
     </section>
 
+      <div id="carouselTrabajos" class="carousel slide carousel-inerza" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselTrabajos" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositiva 1"></button>
+          <button type="button" data-bs-target="#carouselTrabajos" data-bs-slide-to="1" aria-label="Diapositiva 2"></button>
+          <button type="button" data-bs-target="#carouselTrabajos" data-bs-slide-to="2" aria-label="Diapositiva 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/img/carrusel-1.png" class="d-block w-100" alt="Vino personalizado con dedicatoria">
+            <div class="carousel-caption">
+              <h3>Vino personalizado con dedicatoria</h3>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img/carrusel-2.png" class="d-block w-100" alt="Imanes personalizados. Tus recuerdos en todos lados.">
+            <div class="carousel-caption">
+              <h3>Imanes personalizados</h3>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img/carrusel-3.png" class="d-block w-100" alt="Tatuajes temporales para animar cualquier momento. ">
+            <div class="carousel-caption">
+              <h3>Tatuajes temporales</h3>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTrabajos" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselTrabajos" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </section>
+
+  
     <!-- BIENVENIDA -->
     <section class="bienvenida">
       <div class="envolvente">
@@ -148,50 +185,6 @@
       </ul>
     </section>
 
-    <!-- GALERÍA — CAROUSEL BOOTSTRAP -->
-    <section class="seccion envolvente">
-      <div class="seccion__encabezado">
-        <h2 class="titulo-h2">Recorré algunos destacados</h2>
-      </div>
-
-      <div id="carouselTrabajos" class="carousel slide carousel-inerza" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselTrabajos" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositiva 1"></button>
-          <button type="button" data-bs-target="#carouselTrabajos" data-bs-slide-to="1" aria-label="Diapositiva 2"></button>
-          <button type="button" data-bs-target="#carouselTrabajos" data-bs-slide-to="2" aria-label="Diapositiva 3"></button>
-        </div>
-
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="assets/img/trabajo-1.png" class="d-block w-100" alt="Vino personalizado con dedicatoria">
-            <div class="carousel-caption">
-              <h3>Vino personalizado con dedicatoria</h3>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="assets/img/trabajo-3.png" class="d-block w-100" alt="Vino personalizado, regalo de cumpleaños">
-            <div class="carousel-caption">
-              <h3>Vino personalizado</h3>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="assets/img/trabajo-6.png" class="d-block w-100" alt="Mazo de cartas personalizado, regalo de aniversario">
-            <div class="carousel-caption">
-              <h3>Mazo de cartas</h3>
-            </div>
-          </div>
-        </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTrabajos" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselTrabajos" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Siguiente</span>
-        </button>
-      </div>
-    </section>
 
     <!-- ENVIOS -->
     <section class="franja franja--primaria">
