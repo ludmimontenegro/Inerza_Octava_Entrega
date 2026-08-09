@@ -763,3 +763,146 @@ p{
   padding-top: 24px;
   border-top: 1px solid rgba(28, 52, 84, 0.15);
 }
+
+
+/* ==========================================================================
+   17. Bootstrap — overrides para mantener la identidad de INERZA
+   Pegar esto AL FINAL de styles/styles.css
+   ========================================================================== */
+
+/* --- Navbar --- */
+/* Bootstrap trae su propio padding para .navbar; lo neutralizamos porque
+   .encabezado y .envolvente ya resuelven ese espaciado */
+.navbar-inerza{
+  padding: 10px 0;
+  background-color: transparent;
+}
+
+.navbar-inerza .navbar-brand img{
+  height: 60px;
+}
+
+@media (min-width: 1024px){
+  .navbar-inerza .navbar-brand img{
+    height: 70px;
+  }
+}
+
+.navbar-inerza .nav-link{
+  color: var(--color-texto-claro);
+  font-family: var(--fuente-base);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 0;
+}
+
+.navbar-inerza .nav-link:hover,
+.navbar-inerza .nav-link:focus{
+  color: var(--color-secundario);
+}
+
+.navbar-inerza .nav-link.active{
+  color: var(--color-secundario);
+}
+
+/* Ícono de la hamburguesa en color crema, para que se vea sobre el azul */
+.navbar-inerza .navbar-toggler{
+  border-color: rgba(244,239,230,0.4);
+}
+
+.navbar-inerza .navbar-toggler-icon{
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28244, 239, 230, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* En mobile, el menú desplegado hereda el azul de marca */
+@media (max-width: 991.98px){
+  .navbar-inerza .navbar-collapse{
+    background-color: var(--color-primario);
+    margin-top: 12px;
+    padding: 16px 4px;
+    border-radius: var(--radio);
+  }
+
+  .navbar-inerza .nav-link{
+    padding: 10px 4px;
+  }
+}
+
+/* --- Carousel --- */
+.carousel-inerza{
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+
+.carousel-inerza .carousel-item img{
+  height: 420px;
+  object-fit: cover;
+}
+
+@media (max-width: 640px){
+  .carousel-inerza .carousel-item img{
+    height: 260px;
+  }
+}
+
+.carousel-inerza .carousel-caption{
+  background-color: rgba(28, 52, 84, 0.55);
+  border-radius: 10px;
+  padding: 10px 18px;
+}
+
+.carousel-inerza .carousel-caption h3{
+  color: var(--color-texto-claro);
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.carousel-inerza .carousel-indicators [data-bs-target]{
+  background-color: var(--color-secundario);
+}
+
+/* --- Modales de producto --- */
+.tarjeta__imagen-btn{
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+.tarjeta__boton-modal{
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--fuente-base);
+  font-size: 1rem;
+}
+
+.modal-inerza .modal-content{
+  border-radius: var(--radio);
+  border: none;
+}
+
+.modal-inerza .modal-header{
+  border-bottom: 1px solid rgba(28, 52, 84, 0.1);
+}
+
+.modal-inerza .modal-title{
+  color: var(--color-primario);
+  margin: 0;
+}
+
+.modal-inerza .modal-imagen{
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: var(--radio);
+  margin-bottom: 16px;
+}
+
+.modal-inerza .modal-footer{
+  border-top: none;
+}
