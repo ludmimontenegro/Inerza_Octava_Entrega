@@ -1,4 +1,4 @@
-﻿# Inerza - Octava Entrega
+﻿# Inerza - Novena Entrega
 
-- **Repositorio:** https://github.com/ludmimontenegro/Inerza_Octava_Entrega
-- **Sitio desplegado:** https://ludmimontenegro.github.io/Inerza_Octava_Entrega/
+- **Repositorio:** https://github.com/ludmimontenegro/Inerza_Novena_Entrega
+- **Sitio desplegado:** https://ludmimontenegro.github.io/Inerza_Novena_Entrega/
