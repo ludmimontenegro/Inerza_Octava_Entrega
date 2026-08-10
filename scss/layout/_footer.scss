@@ -1,20 +1,18 @@
 // ==========================================================================
-// Footer
+// FOOTER
 // ==========================================================================
-@use '../utilities/variables' as *;
-@use '../utilities/mixins' as *;
 
 .pie {
   background-color: $color-primario;
-  color: $color-texto-claro;
+  color: $color-fondo;
   padding: 32px 0 20px;
 
-  @include respond(desktop) {
+  @include respond("lg") {
     padding: 56px 0 28px;
   }
 
   h3 {
-    color: $color-secundario;
+    color: $color-acento;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -25,13 +23,16 @@
     margin-bottom: 10px;
   }
 
-  ul a:hover {
-    text-decoration: underline;
+  ul a {
+    @include transicion(color);
+
+    &:hover {
+      color: $color-acento;
+      text-decoration: underline;
+    }
   }
 }
 
-// Se mantiene con CSS Grid + grid-template-areas (requisito de la 4ta
-// entrega); no se migra a flex porque es la sección "compleja" evaluada.
 .pie__grid {
   display: grid;
   grid-template-areas:
@@ -42,30 +43,27 @@
   padding-bottom: 32px;
   border-bottom: 1px solid rgba(244, 239, 230, 0.2);
 
-  > div:nth-child(1) { grid-area: marca; }
-  > div:nth-child(2) { grid-area: enlaces; }
-  > div:nth-child(3) { grid-area: contacto; }
+  > div {
+    &:nth-child(1) { grid-area: marca; }
+    &:nth-child(2) { grid-area: enlaces; }
+    &:nth-child(3) { grid-area: contacto; }
+  }
 
-  // Tablet: 2 columnas — marca arriba ocupando todo, enlaces y contacto lado a lado
-  @include respond(tablet) {
+  @include respond("md") {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "marca marca"
       "enlaces contacto";
   }
 
-  // Desktop: 3 columnas en una sola fila
-  @include respond(desktop) {
+  @include respond("lg") {
     grid-template-columns: 1.3fr 1fr 1fr;
-    grid-template-areas:
-      "marca enlaces contacto";
+    grid-template-areas: "marca enlaces contacto";
   }
 }
 
 .pie__marca {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  @include flex(row, flex-start, center, 10px);
   margin-bottom: 14px;
 
   img {

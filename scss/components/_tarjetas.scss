@@ -1,0 +1,150 @@
+// ==========================================================================
+// SECCIÓN GENÉRICA
+// ==========================================================================
+
+.seccion {
+  padding-top: 28px;
+  padding-bottom: 28px;
+
+  @include respond("lg") {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+.seccion--clara {
+  background-color: $color-blanco;
+  border-radius: 20px;
+}
+
+.seccion__encabezado {
+  @extend %encabezado-centrado;
+}
+
+// ==========================================================================
+// TARJETAS
+// ==========================================================================
+
+.tarjetas {
+  @include flex(row, flex-start, stretch, 18px);
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+
+  @include respond("lg") {
+    gap: 30px;
+  }
+}
+
+.tarjeta {
+  @extend %superficie-tarjeta;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+  @include transicion(transform, box-shadow);
+
+  &:hover {
+    transform: translateY(-6px);
+    @include sombra-tarjeta(0.2, 16px, 30px);
+  }
+
+  @include respond("md") {
+    flex: 1 1 calc(50% - 18px);
+  }
+
+  @include respond("lg") {
+    flex: 1 1 calc(33.333% - 30px);
+  }
+
+  figure img {
+    width: 100%;
+    height: 220px;
+    @include ajuste-imagen(cover);
+  }
+}
+
+.tarjeta--horizontal {
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+
+  figure {
+    flex: 0 0 260px;
+
+    img {
+      border-radius: $radio-base 0 0 $radio-base;
+      height: 100%;
+      @include ajuste-imagen(cover);
+    }
+  }
+
+  .tarjeta__cuerpo {
+    padding-left: 0;
+  }
+
+  @include respond-max(700px) {
+    flex-direction: column;
+
+    figure {
+      flex: none;
+
+      img {
+        border-radius: $radio-base $radio-base 0 0;
+      }
+    }
+  }
+}
+
+.tarjeta__cuerpo {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+
+  @include respond("lg") {
+    padding: 24px;
+    gap: 10px;
+  }
+
+  p {
+    color: $color-texto-suave;
+    flex: 1;
+  }
+}
+
+.enlace-vermas {
+  color: $color-acento;
+  font-weight: $peso-semibold;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.tarjeta__imagen-btn {
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+
+  img {
+    @include transicion(transform, $duracion: 0.4s);
+  }
+
+  &:hover img {
+    transform: scale(1.06);
+  }
+}
+
+.tarjeta__boton-modal {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: $fuente-principal;
+  font-size: 1rem;
+}

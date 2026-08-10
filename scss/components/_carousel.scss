@@ -1,20 +1,19 @@
 // ==========================================================================
-// Carousel — componente de Bootstrap, estilado con la identidad de INERZA
+// CARRUSEL
 // ==========================================================================
-@use '../utilities/variables' as *;
 
 .carousel-inerza {
-  border-radius: $radio;
+  border-radius: $radio-base;
   overflow: hidden;
-  box-shadow: $sombra;
+  @include sombra-tarjeta();
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 4rem;
 
   .carousel-item img {
     height: 280px;
-    object-fit: cover;
+    @include ajuste-imagen(cover);
 
-    @media (max-width: 640px) {
+    @include respond-max(640px) {
       height: 200px;
     }
   }
@@ -25,46 +24,13 @@
     padding: 10px 18px;
 
     h3 {
-      color: $color-texto-claro;
+      color: $color-fondo;
       margin: 0;
       font-size: 1.1rem;
     }
   }
 
   .carousel-indicators [data-bs-target] {
-    background-color: $color-secundario;
-  }
-}
-
-.carousel-inerza {
-  border-radius: $radio;
-  overflow: hidden;
-  box-shadow: $sombra;
-  max-width: 600px;
-  margin: 0 auto 4rem; // 👈 antes era "margin: 0 auto", le agregamos el aire abajo
-
-  .carousel-item img {
-    height: 280px;
-    object-fit: cover;
-
-    @media (max-width: 640px) {
-      height: 200px;
-    }
-  }
-
-  .carousel-caption {
-    background-color: rgba(28, 52, 84, 0.55);
-    border-radius: 10px;
-    padding: 10px 18px;
-
-    h3 {
-      color: $color-texto-claro;
-      margin: 0;
-      font-size: 1.1rem;
-    }
-  }
-
-  .carousel-indicators [data-bs-target] {
-    background-color: $color-secundario;
+    background-color: $color-acento;
   }
 }

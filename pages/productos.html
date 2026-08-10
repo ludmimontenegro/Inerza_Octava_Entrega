@@ -6,12 +6,12 @@
   <title>INERZA | Productos</title>
   <meta name="description" content="Conocé los productos personalizados de INERZA: tatuajes temporales, imanes fotográficos y vinos.">
 
- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="../styles/main.css">
-
 </head>
 <body>
 
@@ -42,13 +42,13 @@
 
   <main>
     <section class="seccion envolvente">
-      <div class="seccion__encabezado">
+      <div class="seccion__encabezado" data-aos="fade-up">
         <h1 class="titulo-h1">Mis productos</h1>
         <p class="subtitulo">Cada producto de INERZA nace con la misma idea: transformar momentos, recuerdos e ideas en algo único. Todos nuestros diseños están pensados para personalizarse y adaptarse a cada ocasión, porque creemos que los detalles hacen la diferencia.</p>
       </div>
 
       <div class="tarjetas">
-        <article class="tarjeta" id="tatuajes">
+        <article class="tarjeta" id="tatuajes" data-aos="fade-up" data-aos-delay="0">
           <figure>
             <button type="button" class="tarjeta__imagen-btn" data-bs-toggle="modal" data-bs-target="#modalTatuajes" aria-label="Ampliar imagen de tatuajes temporales personalizados">
               <img src="../assets/img/producto-tatuajes.png" alt="Diseño de tatuaje temporal personalizado con líneas finas">
@@ -61,7 +61,7 @@
           </div>
         </article>
 
-        <article class="tarjeta" id="imanes">
+        <article class="tarjeta" id="imanes" data-aos="fade-up" data-aos-delay="100">
           <figure>
             <button type="button" class="tarjeta__imagen-btn" data-bs-toggle="modal" data-bs-target="#modalImanes" aria-label="Ampliar imagen de imanes fotográficos">
               <img src="../assets/img/producto-imanes.png" alt="Imanes fotográficos personalizados con fotos superpuestas">
@@ -74,7 +74,7 @@
           </div>
         </article>
 
-        <article class="tarjeta" id="vinos">
+        <article class="tarjeta" id="vinos" data-aos="fade-up" data-aos-delay="200">
           <figure>
             <button type="button" class="tarjeta__imagen-btn" data-bs-toggle="modal" data-bs-target="#modalVinos" aria-label="Ampliar imagen de vinos personalizados">
               <img src="../assets/img/producto-vinos.png" alt="Botella de vino con etiqueta personalizada">
@@ -183,6 +183,16 @@
 
   <!-- Bootstrap JS (CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS (Animate On Scroll) -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 80
+    });
+  </script>
 
 </body>
 </html>

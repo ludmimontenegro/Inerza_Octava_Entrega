@@ -1,26 +1,46 @@
 // ==========================================================================
-// Contacto
+// CONTACTO
 // ==========================================================================
-@use '../utilities/variables' as *;
-@use '../utilities/mixins' as *;
+
+.contacto-figura {
+  margin-bottom: 32px;
+
+  img {
+    display: block;
+    width: 100%;
+    max-height: 380px;
+    @include ajuste-imagen(cover);
+    border-radius: $radio-base;
+  }
+}
 
 .contacto-lista {
   display: grid;
   gap: 16px;
   margin-top: 20px;
 
-  @include respond(desktop) {
+  @include respond("md") {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include respond("lg") {
     gap: 24px;
     margin-top: 32px;
   }
 }
 
 .contacto-item {
-  @include superficie-tarjeta;
+  @extend %superficie-tarjeta;
   padding: 24px;
+  @include transicion(transform, box-shadow);
+
+  &:hover {
+    transform: translateY(-4px);
+    @include sombra-tarjeta(0.2, 14px, 28px);
+  }
 
   a {
-    color: $color-secundario;
-    font-weight: 600;
+    color: $color-acento;
+    font-weight: $peso-semibold;
   }
 }

@@ -1,0 +1,39 @@
+// ==========================================================================
+// BOTONES
+// ==========================================================================
+
+.boton {
+  @extend %boton-base;
+}
+
+.boton-primario {
+  @extend %boton-base;
+  background-color: $color-acento;
+  color: $color-fondo;
+
+  &:hover {
+    background-color: darken($color-acento, 8%);
+  }
+}
+
+.boton-secundario {
+  @extend %boton-base;
+  background-color: transparent;
+  border: 2px solid $color-primario;
+  color: $color-primario;
+
+  &:hover {
+    background-color: $color-primario;
+    color: $color-fondo;
+  }
+}
+
+.boton-invertido {
+  @extend %boton-base;
+  background-color: $color-primario;
+  color: $color-fondo;
+
+  &:hover {
+    background-color: darken($color-primario, 6%);
+  }
+}

@@ -1,7 +1,6 @@
 // ==========================================================================
-// Header — contenedor del encabezado del sitio
+// HEADER / NAVBAR
 // ==========================================================================
-@use '../utilities/variables' as *;
 
 .encabezado {
   background-color: $color-primario;
@@ -11,5 +10,78 @@
 
   .logo img {
     height: 70px;
+  }
+}
+
+.navbar-inerza {
+  padding: 10px 0;
+  background-color: transparent;
+
+  .navbar-brand img {
+    height: 60px;
+
+    @include respond("lg") {
+      height: 70px;
+    }
+  }
+
+  .nav-link {
+    color: $color-fondo;
+    font-family: $fuente-principal;
+    font-weight: $peso-semibold;
+    font-size: 0.95rem;
+    padding: 8px 0;
+    position: relative;
+    @include transicion(color);
+
+    // Subrayado animado al pasar el mouse / en el link activo
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: $color-acento;
+      @include transicion(width);
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-acento;
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &.active {
+      color: $color-acento;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .navbar-toggler {
+    border-color: rgba(244, 239, 230, 0.4);
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28244, 239, 230, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  @include respond-max(991.98px) {
+    .navbar-collapse {
+      background-color: $color-primario;
+      margin-top: 12px;
+      padding: 16px 4px;
+      border-radius: $radio-base;
+    }
+
+    .nav-link {
+      padding: 10px 4px;
+    }
   }
 }

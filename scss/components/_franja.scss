@@ -1,34 +1,26 @@
 // ==========================================================================
-// Franja destacada (envíos / CTA)
+// FRANJAS
 // ==========================================================================
-@use '../utilities/variables' as *;
-@use '../utilities/mixins' as *;
 
 .franja {
-  padding: 36px 0;
-  text-align: center;
+  @extend %franja-base;
+}
 
-  @include respond(desktop) {
-    padding: 60px 0;
+.franja--primaria {
+  background-color: $color-primario;
+  color: $color-fondo;
+
+  h2 {
+    color: $color-fondo;
   }
+}
 
-  p {
-    max-width: 55ch;
-    margin: 14px auto 0;
-  }
+.franja--secundaria {
+  background-color: $color-acento;
+  color: $color-fondo;
 
-  &--primaria {
-    background-color: $color-primario;
-    color: $color-texto-claro;
-
-    h2 { color: $color-texto-claro; }
-  }
-
-  &--secundaria {
-    background-color: $color-secundario;
-    color: $color-texto-claro;
-
-    h2 { color: $color-texto-claro; }
+  h2 {
+    color: $color-fondo;
   }
 }
 

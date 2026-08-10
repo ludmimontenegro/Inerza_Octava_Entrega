@@ -1,0 +1,84 @@
+// ==========================================================================
+// ANIMACIONES LOCALES (@keyframes propios del proyecto)
+// Las animaciones "al hacer scroll" están delegadas a la librería AOS
+// (ver data-aos en el HTML). Estas son animaciones locales controladas
+// por SCSS puro: se disparan al cargar la página o con :hover.
+// ==========================================================================
+
+@keyframes aparecerDesdeAbajo {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flotar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulso {
+  0% {
+    box-shadow: 0 0 0 0 rgba(231, 66, 26, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(231, 66, 26, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(231, 66, 26, 0);
+  }
+}
+
+@keyframes girarLogo {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+// Título y subtítulo del hero: entran escalonados al cargar la home
+.hero {
+  .titulo-h1 {
+    @include animar(aparecerDesdeAbajo, $duracion-lenta, ease-out, 0.05s);
+  }
+  .subtitulo {
+    opacity: 0;
+    @include animar(aparecerDesdeAbajo, $duracion-lenta, ease-out, 0.25s);
+  }
+}
+
+// El ícono de la franja de envíos flota suavemente en loop
+.icono-franja {
+  animation: flotar 3.2s ease-in-out infinite;
+}
+
+// El logo del header gira levemente al pasar el mouse
+.encabezado .logo img {
+  @include transicion(transform, $duracion: 0.5s);
+
+  &:hover {
+    transform: rotate(-6deg) scale(1.05);
+  }
+}
+
+// Pulso sutil en el botón invertido del llamado a la acción, para
+// llamar la atención sin ser invasivo
+.boton-invertido {
+  animation: pulso 2.4s infinite;
+}
+
+// Respetar la preferencia del sistema operativo de reducir movimiento
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,47 @@
+// ==========================================================================
+// PLACEHOLDERS — selectores %fantasma para usar con @extend
+// ==========================================================================
+
+// Base de "tarjeta blanca flotante": la comparten .tarjeta, .contacto-item
+// y los <details> de la sección de preguntas frecuentes
+%superficie-tarjeta {
+  background-color: $color-blanco;
+  border-radius: $radio-base;
+  @include sombra-tarjeta();
+}
+
+// Base de encabezado de sección centrado
+%encabezado-centrado {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 48px;
+}
+
+// Base compartida entre los botones (.boton-primario / .boton-invertido / etc.)
+%boton-base {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: $radio-pill;
+  font-weight: $peso-semibold;
+  font-size: 0.95rem;
+  @include transicion(transform);
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+// Franjas de ancho completo con texto centrado (envíos / llamado a la acción)
+%franja-base {
+  padding: 36px 0;
+  text-align: center;
+
+  @include respond("lg") {
+    padding: 60px 0;
+  }
+
+  p {
+    max-width: 55ch;
+    margin: 14px auto 0;
+  }
+}

@@ -1,8 +1,6 @@
 // ==========================================================================
-// Servicios — lista numerada
+// SERVICIOS
 // ==========================================================================
-@use '../utilities/variables' as *;
-@use '../utilities/mixins' as *;
 
 .servicios-lista {
   display: flex;
@@ -10,11 +8,10 @@
 }
 
 .servicio-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 28px;
+  @include flex(row, flex-start, flex-start, 28px);
   padding: 32px 0;
   border-bottom: 1px solid rgba(28, 52, 84, 0.12);
+  @include transicion(padding-left);
 
   &:first-child {
     padding-top: 0;
@@ -24,20 +21,24 @@
     border-bottom: none;
   }
 
-  @media (max-width: 640px) {
+  &:hover {
+    padding-left: 8px;
+  }
+
+  @include respond-max(640px) {
     gap: 16px;
   }
 
   &__numero {
-    font-family: $fuente-base;
-    font-weight: 700;
+    font-family: $fuente-principal;
+    font-weight: $peso-bold;
     font-size: 2.4rem;
-    color: $color-secundario;
+    color: $color-acento;
     flex: 0 0 auto;
     min-width: 55px;
     line-height: 1;
 
-    @include respond(desktop) {
+    @include respond("lg") {
       font-size: 4rem;
       min-width: 90px;
     }
@@ -47,7 +48,7 @@
     min-width: 0;
 
     p {
-      color: $color-texto-secundario;
+      color: $color-texto-suave;
       max-width: 60ch;
     }
   }
@@ -60,7 +61,7 @@
     display: block;
     width: 100%;
     max-height: 480px;
-    object-fit: contain;
-    border-radius: $radio;
+    @include ajuste-imagen(contain);
+    border-radius: $radio-base;
   }
 }

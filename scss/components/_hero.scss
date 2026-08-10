@@ -1,15 +1,13 @@
 // ==========================================================================
-// Hero y Bienvenida
+// HERO + BIENVENIDA
 // ==========================================================================
-@use '../utilities/variables' as *;
-@use '../utilities/mixins' as *;
 
 .hero {
   padding-top: 16px;
   padding-bottom: 16px;
   text-align: center;
 
-  @include respond(desktop) {
+  @include respond("lg") {
     padding-top: 40px;
     padding-bottom: 40px;
   }
@@ -25,22 +23,20 @@
     color: $color-texto-tenue;
     margin-top: 10px;
   }
+}
 
-  &__botones {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-top: 26px;
-  }
+.hero__botones {
+  @include flex(row, center, center, 16px);
+  flex-wrap: wrap;
+  margin-top: 26px;
 }
 
 .bienvenida {
-  background-color: #ffffff;
+  background-color: $color-blanco;
   padding: 16px 0;
   text-align: center;
 
-  @include respond(desktop) {
+  @include respond("lg") {
     padding: 40px 0;
   }
 }

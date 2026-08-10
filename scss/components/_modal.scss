@@ -1,11 +1,10 @@
 // ==========================================================================
-// Modal — componente de Bootstrap, estilado con la identidad de INERZA
+// MODALES
 // ==========================================================================
-@use '../utilities/variables' as *;
 
 .modal-inerza {
   .modal-content {
-    border-radius: $radio;
+    border-radius: $radio-base;
     border: none;
   }
 
@@ -21,8 +20,8 @@
   .modal-imagen {
     width: 100%;
     max-height: 320px;
-    object-fit: cover;
-    border-radius: $radio;
+    @include ajuste-imagen(cover);
+    border-radius: $radio-base;
     margin-bottom: 16px;
   }
 

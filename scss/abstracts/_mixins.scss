@@ -1,0 +1,66 @@
+// ==========================================================================
+// MIXINS
+// ==========================================================================
+
+// Media query a partir del mapa $breakpoints (abstracts/_variables.scss)
+// Uso: @include respond("md") { ... }
+@mixin respond($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "El breakpoint `#{$breakpoint}` no existe en $breakpoints.";
+  }
+}
+
+// Media query descendente (max-width), para los pocos casos donde
+// necesitamos apuntar hacia abajo en vez de mobile-first
+@mixin respond-max($ancho) {
+  @media (max-width: $ancho) {
+    @content;
+  }
+}
+
+// Flexbox con valores por defecto
+@mixin flex($direccion: row, $justificar: flex-start, $alinear: stretch, $espacio: 0) {
+  display: flex;
+  flex-direction: $direccion;
+  justify-content: $justificar;
+  align-items: $alinear;
+  gap: $espacio;
+}
+
+// Sombra de tarjeta reutilizable — parámetros con valores por defecto
+@mixin sombra-tarjeta($opacidad: 0.12, $desplazamiento: 10px, $difuminado: 24px) {
+  box-shadow: 0 $desplazamiento $difuminado rgba(28, 52, 84, $opacidad);
+}
+
+// Transición con lista de propiedades (parámetro variádico) + duración/easing
+@mixin transicion($propiedades..., $duracion: $duracion-media, $easing: $easing-base) {
+  $lista: ();
+  @each $propiedad in $propiedades {
+    $lista: append($lista, $propiedad $duracion $easing, comma);
+  }
+  transition: $lista;
+}
+
+// object-fit con fallback -o- (Opera antiguo) — así se explica el patrón
+// duplicado que ya traía el proyecto (imágenes de galería y tarjetas)
+@mixin ajuste-imagen($fit: cover) {
+  -o-object-fit: $fit;
+  object-fit: $fit;
+}
+
+// Aparición animada reutilizable: liga un @keyframes con delay/duración
+// configurables — se usa junto a las animaciones locales (ver base/_animations.scss)
+@mixin animar($nombre, $duracion: $duracion-lenta, $easing: ease-out, $delay: 0s, $fill: both) {
+  animation: $nombre $duracion $easing $delay $fill;
+}
+
+// Contenedor centrado con ancho máximo (variante del .envolvente para casos puntuales)
+@mixin contenedor($ancho-max: 1160px) {
+  max-width: $ancho-max;
+  margin-left: auto;
+  margin-right: auto;
+}

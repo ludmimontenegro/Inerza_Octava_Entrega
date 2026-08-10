@@ -1,0 +1,40 @@
+// ==========================================================================
+// VARIABLES GLOBALES
+// ==========================================================================
+
+// Colores de marca
+$color-primario: #1c3454;   // azul oscuro (header, footer, títulos)
+$color-acento:   #e7421a;   // naranja (llamados a la acción, hover)
+$color-fondo:    #F4EFE6;   // crema (fondo general)
+$color-blanco:   #ffffff;
+$color-texto:    #2a2a2a;
+$color-texto-suave: #55524d;
+$color-texto-medio: #4d4d4d;
+$color-texto-tenue: #6b6b6b;
+
+// Tipografía
+$fuente-principal: "Manrope", sans-serif;
+$peso-normal: 400;
+$peso-semibold: 600;
+$peso-bold: 700;
+
+// Radios y sombras
+$radio-base: 14px;
+$radio-pill: 999px;
+$sombra-color: rgba(28, 52, 84, 0.12);
+
+// Espaciados base (usados por el mixin `espaciado`)
+$espaciado-base: 8px;
+
+// Breakpoints — mapa usado por el mixin `respond`
+$breakpoints: (
+  "sm": 480px,
+  "md": 640px,
+  "lg": 1024px
+);
+
+// Duraciones de transición/animación
+$duracion-rapida: 0.15s;
+$duracion-media:  0.3s;
+$duracion-lenta:  0.6s;
+$easing-base: ease;

@@ -1,17 +1,15 @@
 // ==========================================================================
-// Sobre mí
+// SOBRE MÍ
 // ==========================================================================
-@use '../utilities/variables' as *;
-@use '../utilities/mixins' as *;
 
 .sobre-mi {
   max-width: 700px;
   margin: 0 auto;
   padding: 24px 0;
-  background-color: $color-acento;
-  border-left: 6px solid $color-secundario;
+  background-color: $color-fondo;
+  border-left: 6px solid $color-acento;
 
-  @include respond(desktop) {
+  @include respond("lg") {
     padding: 48px 0;
   }
 
@@ -27,7 +25,7 @@
 
   &__lema {
     font-style: italic;
-    font-weight: 600;
+    font-weight: $peso-semibold;
     font-size: 1.3rem;
     color: $color-primario;
     text-align: center;
